@@ -9,5 +9,6 @@ public interface ProduitService {
     Produit createProduit(Produit produit);
     Produit getProduitById(Long id);
     void deleteProduit(Long id);
+    Produit updateProduit(Long id, Produit updatedProduit);
 
 }

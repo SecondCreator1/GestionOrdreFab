@@ -1,0 +1,25 @@
+<h2>Liste des Fournisseurs</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Adresse</th>
+      <th>Téléphone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fournisseur of fournisseurs">
+      <td>{{ fournisseur.id }}</td>
+      <td>{{ fournisseur.nom }}</td>
+      <td>{{ fournisseur.adresse }}</td>
+      <td>{{ fournisseur.telephone }}</td>
+      <td>
+        <button (click)="editFournisseur(fournisseur.id)">Edit</button>
+        <button (click)="deleteFournisseur(fournisseur.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<a href="/fournisseurs/add">Ajouter un nouveau fournisseur</a>

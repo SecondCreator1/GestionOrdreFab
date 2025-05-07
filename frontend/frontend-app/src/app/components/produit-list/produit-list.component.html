@@ -1,0 +1,28 @@
+<h2>Liste des Produits</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Type</th>
+      <th>Stock</th>
+      <th>Fournisseur</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produit of produits">
+      <td>{{ produit.id }}</td>
+      <td>{{ produit.nom }}</td>
+      <td>{{ produit.type }}</td>
+      <td>{{ produit.stock }}</td>
+      <td>{{ produit.fournisseur?.nom || '---' }}</td>
+      <td>
+        <button (click)="editProduit(produit.id)">Edit</button>
+        <button (click)="deleteProduit(produit.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<a href="/produits/add">Ajouter un nouveau produit</a>

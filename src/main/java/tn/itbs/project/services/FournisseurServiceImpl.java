@@ -3,10 +3,12 @@ package tn.itbs.project.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tn.itbs.project.model.Fournisseur;
 import tn.itbs.project.repository.FournisseurRepository;
 
+@Service
 public class FournisseurServiceImpl implements FournisseurService {
 
 
@@ -27,6 +29,18 @@ public class FournisseurServiceImpl implements FournisseurService {
     public Fournisseur getFournisseurById(Long id) {
         return fournisseurRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Fournisseur not found with id: " + id));
+    }
+    
+    public Fournisseur updateFournisseur(Long id, Fournisseur updatedFournisseur) {
+        Fournisseur existingFournisseur = fournisseurRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Fournisseur not found with ID: " + id));
+
+        // Update fields
+        existingFournisseur.setNom(updatedFournisseur.getNom());
+        existingFournisseur.setAdresse(updatedFournisseur.getAdresse());
+        existingFournisseur.setTelephone(updatedFournisseur.getTelephone());
+
+        return fournisseurRepository.save(existingFournisseur);
     }
 
     @Override
