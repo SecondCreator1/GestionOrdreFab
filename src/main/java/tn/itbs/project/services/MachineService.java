@@ -10,4 +10,5 @@ public interface MachineService {
 	    Machine createMachine(Machine machine);
 	    Machine getMachineById(Long id);
 	    void deleteMachine(Long id);
+		Machine updateMachine(Long id, Machine updatedMachine);
 }

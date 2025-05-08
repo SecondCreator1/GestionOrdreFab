@@ -18,4 +18,38 @@ public class Machine {
 
     private LocalDate derniereMaintenance;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getEtat() {
+		return etat;
+	}
+
+	public void setEtat(String etat) {
+		this.etat = etat;
+	}
+
+	public LocalDate getDerniereMaintenance() {
+		return derniereMaintenance;
+	}
+
+	public void setDerniereMaintenance(LocalDate derniereMaintenance) {
+		this.derniereMaintenance = derniereMaintenance;
+	}
+    
+    
+
 }

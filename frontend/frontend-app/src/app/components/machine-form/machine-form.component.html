@@ -1,0 +1,30 @@
+<h2>Ajouter une Machine</h2>
+
+<form [formGroup]="machineForm" (ngSubmit)="onSubmit()">
+  <!-- Machine Name -->
+  <div>
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" formControlName="nom" required />
+  </div>
+
+  <!-- Machine State -->
+  <div>
+    <label for="etat">État:</label>
+    <select id="etat" formControlName="etat" required>
+      <option value="Disponible">Disponible</option>
+      <option value="En maintenance">En maintenance</option>
+    </select>
+  </div>
+
+  <!-- Last Maintenance Date -->
+  <div>
+    <label for="derniereMaintenance">Dernière Maintenance:</label>
+    <input type="date" id="derniereMaintenance" formControlName="derniereMaintenance" required />
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="machineForm.invalid">Ajouter</button>
+</form>
+
+<!-- Back to Machine List -->
+<button (click)="goBack()">Retour</button>

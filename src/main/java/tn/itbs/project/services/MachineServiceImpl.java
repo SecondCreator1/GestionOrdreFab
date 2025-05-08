@@ -30,6 +30,19 @@ public class MachineServiceImpl implements MachineService {
         return machineRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Machine not found with id: " + id));
     }
+    
+    @Override
+    public Machine updateMachine(Long id, Machine updatedMachine) {
+        Machine machine = machineRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Machine not found"));
+
+        machine.setNom(updatedMachine.getNom());
+        machine.setEtat(updatedMachine.getEtat());
+        machine.setDerniereMaintenance(updatedMachine.getDerniereMaintenance());
+
+        return machineRepository.save(machine);
+    }
+
 
     @Override
     public void deleteMachine(Long id) {

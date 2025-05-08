@@ -5,6 +5,9 @@ import { FournisseurEditComponent } from './components/fournisseur-edit/fourniss
 import { ProduitListComponent } from './components/produit-list/produit-list.component';
 import { ProduitFormComponent } from './components/produit-form/produit-form.component';
 import { ProduitEditComponent } from './components/produit-edit/produit-edit.component';
+import { MachineListComponent } from './components/machine-list/machine-list.component';
+import { MachineFormComponent } from './components/machine-form/machine-form.component';
+import { MachineEditComponent } from './components/machine-edit/machine-edit.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/fournisseurs', pathMatch: 'full' },
@@ -14,4 +17,8 @@ export const routes: Routes = [
   { path: 'produits', component: ProduitListComponent }, 
   { path: 'produits/add', component: ProduitFormComponent }, 
   { path: 'produits/edit/:id', component: ProduitEditComponent },
+  { path: 'machines', component: MachineListComponent},
+  { path: 'machines/add', component: MachineFormComponent},
+  { path: 'machines/edit/:id', component: MachineEditComponent},
+
 ];
