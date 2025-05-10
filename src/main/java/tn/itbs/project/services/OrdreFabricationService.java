@@ -9,4 +9,5 @@ public interface OrdreFabricationService {
     OrdreFabrication createOrdre(OrdreFabrication ordre);
     OrdreFabrication getOrdreById(Long id);
     void deleteOrdre(Long id);
+    OrdreFabrication updateOrdre(Long id, OrdreFabrication updatedOrdre);
 }

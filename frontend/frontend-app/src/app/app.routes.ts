@@ -8,6 +8,9 @@ import { ProduitEditComponent } from './components/produit-edit/produit-edit.com
 import { MachineListComponent } from './components/machine-list/machine-list.component';
 import { MachineFormComponent } from './components/machine-form/machine-form.component';
 import { MachineEditComponent } from './components/machine-edit/machine-edit.component';
+import { OrdreFabricationListComponent } from './components/ordre-fabrication-list/ordre-fabrication-list.component';
+import { OrdreFabricationFormComponent } from './components/ordre-fabrication-form/ordre-fabrication-form.component';
+import { OrdreFabricationEditComponent } from './components/ordre-fabrication-edit/ordre-fabrication-edit.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/fournisseurs', pathMatch: 'full' },
@@ -20,5 +23,10 @@ export const routes: Routes = [
   { path: 'machines', component: MachineListComponent},
   { path: 'machines/add', component: MachineFormComponent},
   { path: 'machines/edit/:id', component: MachineEditComponent},
+  { path: 'ordres', component: OrdreFabricationListComponent},
+  { path: 'ordres/add', component: OrdreFabricationFormComponent},
+  { path: 'ordres/edit/:id', component: OrdreFabricationEditComponent},
+
+
 
 ];
