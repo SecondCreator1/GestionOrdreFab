@@ -11,9 +11,15 @@ import { MachineEditComponent } from './components/machine-edit/machine-edit.com
 import { OrdreFabricationListComponent } from './components/ordre-fabrication-list/ordre-fabrication-list.component';
 import { OrdreFabricationFormComponent } from './components/ordre-fabrication-form/ordre-fabrication-form.component';
 import { OrdreFabricationEditComponent } from './components/ordre-fabrication-edit/ordre-fabrication-edit.component';
+import { EmployeListComponent } from './components/employe-list/employe-list.component';
+import { EmployeFormComponent } from './components/employe-form/employe-form.component';
+import { EmployeEditComponent } from './components/employe-edit/employe-edit.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/fournisseurs', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent},
   { path: 'fournisseurs', component: FournisseurListComponent }, 
   { path: 'fournisseurs/add', component: FournisseurFormComponent } ,
   { path: 'fournisseurs/edit/:id', component: FournisseurEditComponent },
@@ -26,6 +32,10 @@ export const routes: Routes = [
   { path: 'ordres', component: OrdreFabricationListComponent},
   { path: 'ordres/add', component: OrdreFabricationFormComponent},
   { path: 'ordres/edit/:id', component: OrdreFabricationEditComponent},
+  { path: 'employes', component: EmployeListComponent},
+  { path: 'employes/add', component: EmployeFormComponent},
+  { path: 'employes/edit/:id', component: EmployeEditComponent},
+  { path: 'header', component: HeaderComponent}
 
 
 

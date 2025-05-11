@@ -28,6 +28,18 @@ public class EmployeServiceImpl implements EmployeService {
         return employeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Employe not found with id: " + id));
     }
+    
+    @Override
+    public Employe updateEmploye(Long id, Employe updatedEmploye) {
+        Employe existing = employeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employe not found with id: " + id));
+
+        existing.setNom(updatedEmploye.getNom());
+        existing.setPoste(updatedEmploye.getPoste());
+        existing.setMachineAssignee(updatedEmploye.getMachineAssignee());
+
+        return employeRepository.save(existing);
+    }
 
     @Override
     public void deleteEmploye(Long id) {
